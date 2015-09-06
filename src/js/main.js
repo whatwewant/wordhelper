@@ -7,6 +7,85 @@
  > Created Time : 2015年09月02日 星期三 11时51分40秒
  ****************************************************/
 
+/*********************************************
+* JSON DATA FORMAT
+* URL: http://shanbay.com/api/v1/bdc/search/?word=short&_=1441579792216
+**********************************************
+{
+  "msg": "SUCCESS",
+  "status_code": 0,
+  "data": {
+    "pronunciations": {
+      "uk": "ʃɔːt",
+      "us": "ʃɔːrt"
+    },
+    "en_definitions": {
+      "a": [
+        "primarily temporal sense; indicating or being or seeming to be limited in duration",
+        "(primarily spatial sense) having little length or lacking in length",
+        "low in stature; not tall"
+      ],
+      "s": [
+        "not sufficient to meet a need",
+        "less than the correct or legal or full amount often deliberately so",
+        "lacking foresight or scope"
+      ],
+      "r": [
+        "quickly and without warning",
+        "without possessing something at the time it is contractually sold",
+        "clean across"
+      ],
+      "v": [
+        "cheat someone by not returning him enough money",
+        "create a short circuit in"
+      ],
+      "n": [
+        "the location on a baseball field where the shortstop is stationed",
+        "accidental contact between two points in an electric circuit that have a potential difference",
+        "the fielding position of the player on a baseball team who is stationed between second and third base"
+      ]
+    },
+    "audio_addresses": {
+      "uk": [
+        "http://words-audio.oss.aliyuncs.com/uk%2Fs%2Fsh%2Fshort.mp3",
+        "http://words-audio.cdn.shanbay.com/uk/s/sh/short.mp3"
+      ],
+      "us": [
+        "http://words-audio.oss.aliyuncs.com/us%2Fs%2Fsh%2Fshort.mp3",
+        "http://words-audio.cdn.shanbay.com/us/s/sh/short.mp3"
+      ]
+    },
+    "uk_audio": "http://media.shanbay.com/audio/uk/short.mp3",
+    "conent_id": 5464,
+    "audio_name": "short",
+    "cn_definition": {
+      "pos": "",
+      "defn": "adj. 短的,矮的,短暂的 \nn. 短裤\nadv. 短暂地;突然地"
+    },
+    "num_sense": 1,
+    "content_type": "vocabulary",
+    "id": 5464,
+    "retention": 5,
+    "definition": " adj. 短的,矮的,短暂的 \nn. 短裤\nadv. 短暂地;突然地",
+    "content_id": 5464,
+    "target_retention": 5,
+    "en_definition": {
+      "pos": "a",
+      "defn": "primarily temporal sense; indicating or being or seeming to be limited in duration; (primarily spatial sense) having little length or lacking in length; low in stature; not tall"
+    },
+    "object_id": 5464,
+    "learning_id": 140527464,
+    "content": "short",
+    "pron": "ʃɔːrt",
+    "pronunciation": "ʃɔːrt",
+    "audio": "http://media.shanbay.com/audio/us/short.mp3",
+    "us_audio": "http://media.shanbay.com/audio/us/short.mp3"
+  } 
+}
+****************************************************
+*  JSON DATA FORMATOR END
+****************************************************/
+
     var WordHelper = {
         popover_id: "#wordhelper_popover",
         popover_id_name: "wordhelper_popover",
