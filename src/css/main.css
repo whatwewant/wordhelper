@@ -1,2 +1,8 @@
 /* Main CSS */
-
+.popover-definition {
+  font-size: 10px;
+}
+.popover-definition .popover-each-definition {
+  line-height: 1.5em;
+  margin-bottom: 5px;
+}

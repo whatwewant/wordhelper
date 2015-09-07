@@ -141,6 +141,15 @@
                     }).play(); 
                 } 
             }, 
+        transformDefinition: function (definitionArray) {
+                return '  <div class="popover-definition">' + 
+                        definitionArray.map(function (e, index, array) {
+                            return '<div class="popover-each-definition">' +
+                                array[index] +
+                                '</div>';
+                        }).join('') + 
+                        '  </div>';
+            },
         popover: function (allData) {
                 var data = allData.wordhelper;
                 var webster = allData.webster;
@@ -180,11 +189,7 @@
                         }
  
                         html += '<div class="popover-content">' +
-                            '  <p>' + data.data.definition.split('\n').join("<br />") + "<br />" + defs + '</p>' + 
-                            // '  <div class="add-btn"><a href="#" class="btn" id="wordhelper-add-btn">添加生词</a>' +
-                            // '    <p class="success hide">成功添加!</p>' +
-                            // '    <a href="#" target="_blank" class="btn hide"> id="wordhelper-check-btn">查看</a>' +
-                            // '  </div>' +
+                            this.transformDefinition(data.data.definition.split('\n')) +
                             '</div>';  
                     }
                 }

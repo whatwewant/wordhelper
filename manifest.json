@@ -1,9 +1,6 @@
 {
-   "browser_action": {
-      "default_icon": "icons/128.png"
-   },
    "content_scripts": [ {
-      "css": ["dist/css/wordhelper.css"],
+      "css": ["dist/css/wordhelper.css", "dist/css/main.css"],
       "matches": [ "http://*/", "http://*/*", "https://*/", "https://*/**" ],
       "js": ["dist/js/jquery-1.11.3.min.js", "dist/js/howler.min.js", "dist/js/main.js"]
    } ],
