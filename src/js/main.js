@@ -80,7 +80,7 @@
     "pronunciation": "ʃɔːrt",
     "audio": "http://media.shanbay.com/audio/us/short.mp3",
     "us_audio": "http://media.shanbay.com/audio/us/short.mp3"
-  } 
+  }
 }
 ****************************************************
 *  JSON DATA FORMATOR END
@@ -100,7 +100,7 @@
                     case 'top':
                         offset = e.offsetTop;
                         break;
-                } 
+                }
 
                 if (! e.offsetParent)
                     return offset;
@@ -128,7 +128,6 @@
                     dummy.remove();
                     window.getSelection().addRange(range);
                 }
-                // console.log(left + ':' + top);
                 callback(left, top);
             },
         hidePopover: function () {
@@ -138,24 +137,24 @@
                 if (audio_url) {
                     new Howl({
                         urls: [audio_url]
-                    }).play(); 
-                } 
-            }, 
+                    }).play();
+                }
+            },
         transformDefinition: function (definitionArray) {
-                return '  <div class="popover-definition">' + 
+                return '  <div class="popover-definition">' +
                         definitionArray.map(function (e, index, array) {
                             return '<div class="popover-each-definition">' +
                                 array[index] +
                                 '</div>';
-                        }).join('') + 
+                        }).join('') +
                         '  </div>';
             },
         popover: function (allData) {
                 var data = allData.wordhelper;
                 var webster = allData.webster;
                 var defs = "";
-                var html = '<div id=' + 
-                    this.popover_id_name + 
+                var html = '<div id=' +
+                    this.popover_id_name +
                     '><div class="popover-inner"><h3 class="popover-title">';
                 // loading notification
                 if (true === data.loading) {
@@ -187,10 +186,10 @@
                         else {
                             html += '</h3>';
                         }
- 
+
                         html += '<div class="popover-content">' +
                             this.transformDefinition(data.data.definition.split('\n')) +
-                            '</div>';  
+                            '</div>';
                     }
                 }
 
@@ -200,7 +199,7 @@
 
                 this.getSelectionOffset(function (left, top) {
                     this.setPopoverPosition(left, top);
-                }.bind(this)); 
+                }.bind(this));
 
                 $(this.popover_id + ' .speak.us').click (function (e) {
                     e.preventDefault();
@@ -228,7 +227,11 @@
     $(document).ready(function () {
         $(document).on("dblclick", function () {
             var selection = document.getSelection();
-            var selectedData = selection.getRangeAt(0).toString();
+            var selectedDataRange = selection.getRangeAt(0);
+            if (! selectedDataRange) {
+                return ;
+            }
+            var selectedData = selectedDataRange.toString();
             if (! selectedData || ! (new RegExp(/^[a-z]+$/i).test(selectedData))) {
                 return ;
             }
@@ -254,7 +257,7 @@
                     });
                 }.bind(selection),
                 error: function (msg) {
-                    console.log("Word Helper Search Error " + msg.toString()); 
+                    console.log("Word Helper Search Error " + msg.toString());
                 }
             });
         });
