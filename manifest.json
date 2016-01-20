@@ -1,10 +1,10 @@
 {
    "content_scripts": [ {
-      "css": ["dist/css/wordhelper.css", "dist/css/main.css"],
-      "matches": [ "http://*/", "http://*/*", "https://*/", "https://*/**" ],
-      "js": ["dist/js/jquery-1.11.3.min.js", "dist/js/howler.min.js", "dist/js/main.js"]
+      "css": [ "dist/css/wordhelper.css" ],
+      "js": [ "dist/js/jquery-1.11.3.min.js", "dist/js/howler.min.js", "dist/js/main.js" ],
+      "matches": [ "http://*/", "http://*/*", "https://*/", "https://*/**" ]
    } ],
-   "description": "我的作息时间表",
+   "description": "单词助手",
    "icons": {
       "128": "icons/128.png",
       "16": "icons/16.png",
@@ -13,5 +13,5 @@
    "manifest_version": 2,
    "name": "WordHelper",
    "permissions": [ "http://*/" ],
-   "version": "1.0.0"
+   "version": "1.0.1"
 }
