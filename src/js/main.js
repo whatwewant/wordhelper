@@ -203,13 +203,13 @@
 
                 $(this.popover_id + ' .speak.us').click (function (e) {
                     e.preventDefault();
-                    var audio_url = 'http://media.shanbay.com/audio/us/' + data.data.content + '.mp3';
+                    var audio_url = '//media.shanbay.com/audio/us/' + data.data.content + '.mp3';
                     this.playAudio(audio_url);
                 }.bind(this));
 
                 $(this.popover_id + ' .speak.uk').click (function (e) {
                     e.preventDefault();
-                    var audio_url = 'http://media.shanbay.com/audio/uk/' + data.data.content + '.mp3';
+                    var audio_url = '//media.shanbay.com/audio/uk/' + data.data.content + '.mp3';
                     this.playAudio(audio_url);
                 }.bind(this));
 
@@ -223,10 +223,14 @@
             }
     };
 
-;(function ($) {
+;(function ($) { 
     $(document).ready(function () {
         $(document).on("dblclick", function () {
             var selection = document.getSelection();
+            if (! selection) {
+                return ;
+            }
+
             var selectedDataRange = selection.getRangeAt(0);
             if (! selectedDataRange) {
                 return ;
@@ -243,7 +247,7 @@
                 }
             });
             $.ajax({
-                url: "http://shanbay.com/api/v1/bdc/search/?word=" + selectedData + "&_="+ (new Date()).getTime(),
+                url: "//shanbay.com/api/v1/bdc/search/?word=" + selectedData + "&_="+ (new Date()).getTime(),
                 method: 'GET',
                 dataType: 'json',
                 success: function (data) {
